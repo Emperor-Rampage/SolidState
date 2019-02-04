@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            anim.SetBool("IsJumping", true);
+            
         }
 
         if(Input.GetButtonDown("Crouch"))
@@ -43,16 +43,26 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+        if(control.m_Grounded)
+        {
+            anim.SetBool("IsJumping", false);
+        }
     }
 
     void FixedUpdate() //Use FixedUpdate for all physics calculations, like player or enemy movement.
     {
         control.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump); //Time.fixedDeltaTime is important, as it takes the exact time that has elapsed since the last call of this method, and keeps all character motion consistent across any platforms.
         jump = false;
+        if (!control.m_Grounded)
+        {
+            anim.SetBool("IsJumping", true);
+        }
     }
 
     public void OnLanding()
     {
-        anim.SetBool("IsJumping", false);
+        Debug.Log("OnLanding Event");
+        //anim.SetBool("IsJumping", false);
     }
 }

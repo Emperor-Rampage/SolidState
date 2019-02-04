@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health = 100;
+
+    public GameObject HealDrop;
+
+    public GameObject deathEffect;
+
+    public void TakeDamage(int damage)
     {
-        
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Die()
     {
-        
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(HealDrop, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

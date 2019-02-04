@@ -81,7 +81,7 @@ TextureImporter:
     21300152: Tera_76
     21300154: Tera_77
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -1527,7 +1527,7 @@ TextureImporter:
         serializedVersion: 2
         x: 528
         y: 48
-        width: 48
+        width: 47
         height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}

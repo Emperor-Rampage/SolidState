@@ -24,11 +24,11 @@ public class Bullet : MonoBehaviour
     {
         Enemy enemy = collision.GetComponent<Enemy>();
         Debug.Log(collision.name);
-        if(enemy!= null)
+        if(enemy != null)
         {
-
+            enemy.TakeDamage(damage);
         }
-        
+        Instantiate(BlastSprite,transform.position,transform.rotation);
         Destroy(gameObject);
     }
 }
