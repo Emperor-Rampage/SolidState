@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 20
+  damage: 40
   rb: {fileID: 5426415697157087461}
   BlastSprite: {fileID: 771874403576834397, guid: 702cb38e32102364b960b4eb9be571bd,
     type: 3}
