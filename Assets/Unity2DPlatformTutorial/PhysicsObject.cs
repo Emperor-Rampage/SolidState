@@ -26,7 +26,7 @@ public class PhysicsObject : MonoBehaviour
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16]; //Array that holds the first 16 collision hits that are detected in a frame.
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16); //List that is used to actually check the hitBuffer array, as there may be less than 16 collisions in a frame.
     protected const float shellRadius = 0.01f; //Makes sure that the object will not slip into other colliders.
-    protected const float minMoveDistance = 0.001f; //Makes sure that we aren't checking for movement if the object hasn't moved since last frame.
+    protected const float minMoveDistance = float.Epsilon; //Makes sure that we aren't checking for movement if the object hasn't moved since last frame.
 
 
 
